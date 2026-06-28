@@ -1,81 +1,32 @@
-# Custom Skills for Claude & AI Coding Assistants
+# Claude Custom Skills
 
-This repository contains a collection of custom skills designed to enhance AI coding assistants (such as Claude Code) for academic writing, document formatting, and writing style humanization.
+คอลเลกชัน Custom Skills สำหรับช่วยเหลืองานเอกสาร การทำ Paper วิชาการ และปรับแต่งสำนวนภาษาให้มีความเป็นธรรมชาติสำหรับ AI Coding Assistants (เช่น Claude Code)
 
-## Credits & Original Source
-
-These skills were created and shared by **อาจารย์เจนนี่ (Ajarn Jennie)**.
-- **Original Post:** [Ajarn Jennie - แจก Skill! ทางลัดของสายเอกสารและคนทำ Paper](https://www.facebook.com/share/p/17iouCyciY/)
-
----
-
-## Index of Skills
-
-1. [Academic Paper Writer (`academic-paper-writer.skill`)](#1-academic-paper-writer-academic-paper-writerskill) — Professional assistant for drafting and revising international research papers.
-2. [Thai DOCX Formatting (`thai-docx.skill`)](#2-thai-docx-formatting-thai-docxskill) — Python tool for ensuring proper word-wrapping and line breaks in Thai Word documents.
-3. [Writing Style Humanizer (`humanizer-main.zip`)](#3-writing-style-humanizer-humanizer-mainzip) — Style editor to eliminate AI writing tells and match natural human voices.
+> **Credits & Original Source:** 
+> สร้างและเผยแพร่โดย **อาจารย์เจนนี่ (Ajarn Jennie)** 
+> ติดตามโพสต์ต้นฉบับได้ที่: [แจก Skill! ทางลัดของสายเอกสารและคนทำ Paper](https://www.facebook.com/share/p/17iouCyciY/)
 
 ---
 
-## Skill Explanations
+## รายชื่อและรายละเอียดของ Skills
 
 ### 1. Academic Paper Writer (`academic-paper-writer.skill`)
-*   **Purpose:** Helps researchers turn raw data, rough ideas, or drafts into publication-ready academic manuscripts for international journals.
-*   **Target Language:** English (for the paper content), with Thai used for discussion and explanations.
-*   **Key Features:**
-    *   **Anti-AI Vocabulary Filter:** Strictly bans flowery, overused AI words and phrases (e.g., *delve into, landscape, multifaceted, in the realm of, utilize, elucidate, plays a crucial role*).
-    *   **Specific Claims:** Forces the AI to back up arguments with concrete numbers and specific studies instead of writing generic sentences like "previous studies have shown."
-    *   **Structured Paper Templates:** Provides outlines and checklist rules for Empirical/R&D Papers and Systematic Reviews (adhering to PRISMA guidelines).
-    *   **Fact-Checked References:** Default citation style is APA 7th Edition. The skill mandates using web search to find real, verifiable papers within the last 5 years and forbids hallucinating or fabricating references.
-    *   **Quality Checklist:** Mentally audits drafts before final output to verify rhythm variation, specific evidence, and human-like writing tone.
+* **สรุปย่อ:** ผู้ช่วยเขียนและปรับปรุงบทความวิชาการ (Research Paper/Manuscript) เพื่อเตรียมส่งตีพิมพ์ในระดับนานาชาติ เน้นเขียนด้วยภาษาอังกฤษเชิงวิชาการที่กระชับ ตรงประเด็น เลี่ยงคำศัพท์ฟุ่มเฟือยที่เป็นจุดสังเกตของ AI (เช่น *delve, landscape, multifaceted*) และระบบตรวจสอบการอ้างอิงตามมาตรฐาน APA 7th Edition
+* **ข้อมูลเชิงลึก:** [ดูรายละเอียดเพิ่มเติมใน docs/academic-paper-writer.md](docs/academic-paper-writer.md)
 
 ### 2. Thai DOCX Formatting (`thai-docx.skill`)
-*   **Purpose:** Resolves the common issue where Thai text wraps prematurely in Word documents, creating short lines and large, empty right margins.
-*   **Target Language:** Thai and mixed Thai-English documents.
-*   **Key Features:**
-    *   **Zero-Width Space Injection:** Uses `pythainlp` in a Python script (`scripts/thai_docx.py`) to tokenize Thai words and insert Zero-Width Space characters (`U+200B`). These characters are invisible but instruct Microsoft Word's layout engine on where it is safe to break lines.
-    *   **Left-Alignment Rule:** Enforces left alignment because justified layouts stretch Thai spacing and characters unnaturally.
-    *   **Python Integration:** Relies on the Python `python-docx` library (avoiding JavaScript-based docx libraries which lack proper Thai wrapping support).
-    *   **CLI & Import Modes:** Can be run as a command-line script (`python scripts/thai_docx.py input.txt -o output.docx`) or imported as helper functions `insert_zwsp()` and `create_docx()`.
+* **สรุปย่อ:** แก้ไขปัญหาการตัดบรรทัดภาษาไทยในเอกสาร Word (`.docx`) โดยระบบจะใช้ `pythainlp` บน Python ในการตัดคำแล้วแทรกตัวอักษรล่องหน Zero-Width Space (ZWS, `\u200b`) ระหว่างคำ เพื่อบอกให้ Microsoft Word รู้จุดตัดบรรทัดที่ถูกต้อง ทำให้ตัวอักษรพิมพ์เต็มบรรทัดสวยงาม ไม่ตัดขึ้นบรรทัดใหม่ก่อนเวลาอันควร
+* **ข้อมูลเชิงลึก:** [ดูรายละเอียดเพิ่มเติมใน docs/thai-docx.md](docs/thai-docx.md)
 
 ### 3. Writing Style Humanizer (`humanizer-main.zip`)
-*   **Purpose:** Edits and refines text to strip away all signatures of AI generation, restoring personality, flow, and natural phrasing. Based on Wikipedia's "Signs of AI writing" guide.
-*   **Target Language:** Multilingual (primarily English/Thai text editing).
-*   **Key Features:**
-    *   **33 AI-Pattern Auditors:** Scans and eliminates typical AI writing habits including:
-        *   Inflated symbolism and promotional language (*boasts a, vibrant, testament to, nestled in*).
-        *   Superficial analyses ending in present participles (*highlighting, showcasing, fostering*).
-        *   Structural patterns like outline-like "Challenges and Legacy" sections, boldface overuse, and bullet-point lists starting with bold inline-headers.
-        *   Grammatical tells such as copula avoidance (replacing "is/are" with "serves as/stands as"), negative parallelisms (*not only... but also*), and sycophantic/servile tones (*Great question! Certainly!*).
-    *   **Voice Calibration:** Can ingest a writing sample from the user to analyze sentence length variety, punctuation habits (e.g., dash usage), vocabulary register, and transition styles to match the user's authentic voice in the output.
-    *   **Strict Em-Dash/En-Dash Ban:** Hard rule to replace all em dashes (`—`) and en dashes (`–`) with periods, commas, colons, or parentheses, removing one of the strongest statistical AI tells.
+* **สรุปย่อ:** สเกลาร์ปรับแต่งสไตล์การเขียนเพื่อลบล้างความเป็น AI (AI Tells) กว่า 33 รูปแบบ อ้างอิงตามแนวทาง "Signs of AI writing" ของ Wikipedia ช่วยเกลี่ยโครงสร้างประโยคให้นุ่มนวล เป็นธรรมชาติ มีชีวิตชีวา และสามารถป้อนตัวอย่างเขียนของตัวเองเพื่อถอดรหัสและเลียนแบบน้ำเสียงผู้ใช้ (Voice Calibration) ได้
+* **ข้อมูลเชิงลึก:** [ดูรายละเอียดเพิ่มเติมใน docs/humanizer.md](docs/humanizer.md)
 
 ---
 
-## How to Install and Use Custom Skills
+## วิธีติดตั้งและใช้งานเบื้องต้น
 
-To load these skills into your AI assistant workspace:
-
-1. **Locate your custom skill folder:**
-   * **Global path:** `~/.gemini/config/skills/` (for Gemini-based agents) or `~/.claude/config/skills/` (for Claude-based agents).
-   * **Project path:** Create an `.agents/skills/` folder at the root of your project directory.
-2. **Extract the skill package:**
-   * Unzip the `.skill` or `.zip` file into the target skills folder.
-   * *Example structure:*
-     ```
-     .agents/
-     └── skills/
-         ├── academic-paper-writer/
-         │   └── SKILL.md
-         ├── thai-docx/
-         │   ├── SKILL.md
-         │   └── scripts/
-         │       └── thai_docx.py
-         └── humanizer-main/
-             ├── SKILL.md
-             ├── AGENTS.md
-             ├── LICENSE
-             └── README.md
-     ```
-3. **Verify registration:**
-   Your AI assistant will automatically discover the skills in standard directories when they are matched by the triggers specified in the YAML frontmatter of their respective `SKILL.md` files.
+1. นำไฟล์ `SKILL.md` (และโครงสร้างโฟลเดอร์ของแต่ละ Skill) ไปใส่ไว้ในโฟลเดอร์ Custom Skills ของ AI Assistant:
+   * **สำหรับระดับ Project:** วางไว้ที่ `.agents/skills/` (เช่น `.agents/skills/thai-docx/SKILL.md`)
+   * **สำหรับระดับ Global:** วางไว้ที่ `~/.gemini/config/skills/` (Gemini) หรือ `~/.claude/config/skills/` (Claude)
+2. เมื่อพิมพ์คำสั่งหรือทำงานที่ตรงกับ Trigger ใน YAML Frontmatter ของ Skill นั้นๆ AI จะดึงคำสั่งไปใช้งานโดยอัตโนมัติ
