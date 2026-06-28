@@ -10,17 +10,11 @@
 
 ## รายชื่อและรายละเอียดของ Skills
 
-### 1. Academic Paper Writer (`academic-paper-writer.skill`)
-* **สรุปย่อ:** ผู้ช่วยเขียนและปรับปรุงบทความวิชาการ (Research Paper/Manuscript) เพื่อเตรียมส่งตีพิมพ์ในระดับนานาชาติ เน้นเขียนด้วยภาษาอังกฤษเชิงวิชาการที่กระชับ ตรงประเด็น เลี่ยงคำศัพท์ฟุ่มเฟือยที่เป็นจุดสังเกตของ AI (เช่น *delve, landscape, multifaceted*) และระบบตรวจสอบการอ้างอิงตามมาตรฐาน APA 7th Edition
-* **ข้อมูลเชิงลึก:** [ดูรายละเอียดเพิ่มเติมใน docs/academic-paper-writer.md](docs/academic-paper-writer.md)
-
-### 2. Thai DOCX Formatting (`thai-docx.skill`)
-* **สรุปย่อ:** แก้ไขปัญหาการตัดบรรทัดภาษาไทยในเอกสาร Word (`.docx`) โดยระบบจะใช้ `pythainlp` บน Python ในการตัดคำแล้วแทรกตัวอักษรล่องหน Zero-Width Space (ZWS, `\u200b`) ระหว่างคำ เพื่อบอกให้ Microsoft Word รู้จุดตัดบรรทัดที่ถูกต้อง ทำให้ตัวอักษรพิมพ์เต็มบรรทัดสวยงาม ไม่ตัดขึ้นบรรทัดใหม่ก่อนเวลาอันควร
-* **ข้อมูลเชิงลึก:** [ดูรายละเอียดเพิ่มเติมใน docs/thai-docx.md](docs/thai-docx.md)
-
-### 3. Writing Style Humanizer (`humanizer-main.zip`)
-* **สรุปย่อ:** สเกลาร์ปรับแต่งสไตล์การเขียนเพื่อลบล้างความเป็น AI (AI Tells) กว่า 33 รูปแบบ อ้างอิงตามแนวทาง "Signs of AI writing" ของ Wikipedia ช่วยเกลี่ยโครงสร้างประโยคให้นุ่มนวล เป็นธรรมชาติ มีชีวิตชีวา และสามารถป้อนตัวอย่างเขียนของตัวเองเพื่อถอดรหัสและเลียนแบบน้ำเสียงผู้ใช้ (Voice Calibration) ได้
-* **ข้อมูลเชิงลึก:** [ดูรายละเอียดเพิ่มเติมใน docs/humanizer.md](docs/humanizer.md)
+| ชื่อ Skill | สรุปย่อ | เอกสารรายละเอียด |
+| :--- | :--- | :--- |
+| **Academic Paper Writer**<br>`academic-paper-writer.skill` | ผู้ช่วยเขียนและปรับปรุงบทความวิชาการ (Research Paper) เป็นภาษาอังกฤษเชิงวิชาการที่กระชับ เลี่ยงคำศัพท์ฟุ่มเฟือยที่เป็นจุดสังเกตของ AI และมีระบบตรวจสอบการอ้างอิงตามมาตรฐาน APA 7th Edition | [อ่านรายละเอียด](docs/academic-paper-writer.md) |
+| **Thai DOCX Formatting**<br>`thai-docx.skill` | แก้ปัญหาการตัดคำภาษาไทยในไฟล์ Word (`.docx`) โดยการใช้ `pythainlp` แทรก Zero-Width Space (`\u200b`) ระหว่างคำไทยเพื่อระบุจุดตัดบรรทัดที่ถูกต้อง ทำให้ตัวอักษรพิมพ์เต็มบรรทัดสวยงาม | [อ่านรายละเอียด](docs/thai-docx.md) |
+| **Writing Style Humanizer**<br>`humanizer-main.zip` | ปรับแต่งสไตล์การเขียนเพื่อลบล้างความเป็น AI (AI Tells) กว่า 33 รูปแบบตามแนวทางของ Wikipedia สามารถเลียนแบบน้ำเสียงผู้ใช้ (Voice Calibration) และลบสัญลักษณ์อย่าง Em Dash ออกทั้งหมด | [อ่านรายละเอียด](docs/humanizer.md) |
 
 ---
 
