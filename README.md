@@ -15,6 +15,10 @@ A small collection of reusable skills for AI coding assistants.
 
 See [`docs/`](docs/) for detailed usage notes.
 
+## Recommended skill
+
+- [diagram-design](https://github.com/cathrynlavery/diagram-design) — creates editorial-quality diagrams for Claude Code, Codex, and other AI coding assistants
+
 ## Installation
 
 Extract or copy a skill into your assistant's skills directory, then restart the assistant if required. For Codex, use `~/.codex/skills/<skill-name>/SKILL.md`.
