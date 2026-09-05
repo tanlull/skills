@@ -15,10 +15,6 @@ A small collection of reusable skills for AI coding assistants.
 
 See [`docs/`](docs/) for detailed usage notes.
 
-## Recommended skill
-
-- [drawio-skill](https://github.com/Agents365-ai/drawio-skill) — creates and maintains editable draw.io diagrams from text, code, infrastructure, and schemas
-
 ## Installation
 
 Extract or copy a skill into your assistant's skills directory, then restart the assistant if required. For Codex, use `~/.codex/skills/<skill-name>/SKILL.md`.
