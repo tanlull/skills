@@ -12,6 +12,7 @@ A small collection of reusable skills for AI coding assistants.
 - `macos-mq5-compile.skill` — compiles MQL5 files on macOS
 - `mq5-macos-backtest-main.zip` — runs MQL5 backtests on macOS
 - `nt-web-theme.skill` — applies an NT-inspired theme to web pages
+- `nt-slide.skill` — creates NT-branded presentation decks with oversized text and ImageGen visuals ([usage](docs/nt-slide.md))
 
 See [`docs/`](docs/) for detailed usage notes.
 
