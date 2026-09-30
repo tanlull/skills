@@ -7,7 +7,9 @@
 - Uses NT yellow, charcoal, white, and warm gray on a 16:9 slide canvas.
 - Enlarges primary and secondary text by at least 2.5× when restyling an existing deck; simplifies or splits dense content to keep it readable.
 - Places the original NT logo on every slide.
-- Uses ImageGen for professional, slide-specific visuals, with titles and other exact copy set separately as accurate slide text.
+- Generates one complete 16:9 slide page with ImageGen for each slide, then composes the pages into PowerPoint.
+- Adds the original NT logo separately to every slide. If ImageGen distorts text, regenerate the page or correct it with accurate overlays before delivery.
+- Keeps the slide text editable as PowerPoint overlays when requested.
 - Includes the reference cover, a reference content slide, and the NT logo as bundled assets.
 
 ## Install in Codex
@@ -23,7 +25,7 @@ The resulting entry point is `~/.codex/skills/nt-slide/SKILL.md`. Invoke it with
 
 ## Package contents
 
-- `SKILL.md` — style rules and presentation workflow
+- `SKILL.md` — full-page ImageGen workflow, NT style rules, and PowerPoint assembly steps
 - `agents/openai.yaml` — UI metadata for the skill
 - `assets/nt-logo.png` — supplied NT logo
 - `assets/reference-cover.png` — cover-slide style reference
